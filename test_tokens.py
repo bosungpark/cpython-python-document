@@ -2,7 +2,7 @@
 cpython/python.exe -m tokenize -e test_tokens.py
 """
 def function():
-    proceed  # Syntax I created, This is not offcial syntax of python.
+    proceed  # Syntax I created, This is not official syntax of python.
 
 """
 토큰의 위치            토큰의 이름       토큰의 값

@@ -50,3 +50,26 @@ pprint(lex("a+1"))
  ['NEWLINE', ''],
  ['ENDMARKER', '']]
 """
+##################### PARSER ###############################
+"""
+This cmd will show ast in web
+>>> pip install instaviz
+>>> python
+
+>>> import instaviz
+
+>>> def foo():
+        a=1
+        b=a+1
+        return b
+
+>>> instaviz.show(foo)
+"""
+"""
+import ast
+m= ast.parse('1~=2')
+m.body[0].value.ops[0]
+
+>>>
+"""
+

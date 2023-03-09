@@ -410,6 +410,7 @@ compare_op_bitwise_or_pair[CmpopExprPair*]:
     | in_bitwise_or
     | isnot_bitwise_or
     | is_bitwise_or
+    | ale_bitwise_or
 eq_bitwise_or[CmpopExprPair*]: '==' a=bitwise_or { _PyPegen_cmpop_expr_pair(p, Eq, a) }
 noteq_bitwise_or[CmpopExprPair*]:
     | (tok='!=' { _PyPegen_check_barry_as_flufl(p, tok) ? NULL : tok}) a=bitwise_or {_PyPegen_cmpop_expr_pair(p, NotEq, a) }
@@ -421,6 +422,7 @@ notin_bitwise_or[CmpopExprPair*]: 'not' 'in' a=bitwise_or { _PyPegen_cmpop_expr_
 in_bitwise_or[CmpopExprPair*]: 'in' a=bitwise_or { _PyPegen_cmpop_expr_pair(p, In, a) }
 isnot_bitwise_or[CmpopExprPair*]: 'is' 'not' a=bitwise_or { _PyPegen_cmpop_expr_pair(p, IsNot, a) }
 is_bitwise_or[CmpopExprPair*]: 'is' a=bitwise_or { _PyPegen_cmpop_expr_pair(p, Is, a) }
+ale_bitwise_or[CmpopExprPair*]: '~=' a=ale_bitwise_or { _PyPegen_cmpop_expr_pair(p, AlE, a) }
 
 bitwise_or[expr_ty]:
     | a=bitwise_or '|' b=bitwise_xor { _Py_BinOp(a, BitOr, b, EXTRA) }

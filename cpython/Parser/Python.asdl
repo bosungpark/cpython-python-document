@@ -99,7 +99,7 @@ module Python
 
     unaryop = Invert | Not | UAdd | USub
 
-    cmpop = Eq | NotEq | Lt | LtE | Gt | GtE | Is | IsNot | In | NotIn
+    cmpop = Eq | NotEq | Lt | LtE | Gt | GtE | Is | IsNot | In | NotIn | AlE
 
     comprehension = (expr target, expr iter, expr* ifs, int is_async)
 

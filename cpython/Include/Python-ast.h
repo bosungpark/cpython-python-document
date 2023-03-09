@@ -28,7 +28,7 @@ typedef enum _operator { Add=1, Sub=2, Mult=3, MatMult=4, Div=5, Mod=6, Pow=7,
 typedef enum _unaryop { Invert=1, Not=2, UAdd=3, USub=4 } unaryop_ty;
 
 typedef enum _cmpop { Eq=1, NotEq=2, Lt=3, LtE=4, Gt=5, GtE=6, Is=7, IsNot=8,
-                      In=9, NotIn=10 } cmpop_ty;
+                      In=9, NotIn=10, AlE=11 } cmpop_ty;
 
 typedef struct _comprehension *comprehension_ty;
 

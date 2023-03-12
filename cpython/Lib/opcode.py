@@ -21,7 +21,7 @@ try:
 except ImportError:
     pass
 
-cmp_op = ('<', '<=', '==', '!=', '>', '>=')
+cmp_op = ('<', '<=', '==', '!=', '>', '>=', '~=')
 
 hasconst = []
 hasname = []

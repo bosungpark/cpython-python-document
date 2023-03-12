@@ -2496,6 +2496,9 @@ static int compiler_addcompare(struct compiler *c, cmpop_ty op)
     case GtE:
         cmp = Py_GE;
         break;
+    case AlE:
+        cmp = Py_AlE;
+        break;
     case Is:
         ADDOP_I(c, IS_OP, 0);
         return 1;

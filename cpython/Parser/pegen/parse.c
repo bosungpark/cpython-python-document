@@ -9284,7 +9284,7 @@ is_bitwise_or_rule(Parser *p)
     return _res;
 }
 
-// ale_bitwise_or: '~=' ale_bitwise_or
+// ale_bitwise_or: '~=' bitwise_or
 static CmpopExprPair*
 ale_bitwise_or_rule(Parser *p)
 {
@@ -9298,21 +9298,21 @@ ale_bitwise_or_rule(Parser *p)
     }
     CmpopExprPair* _res = NULL;
     int _mark = p->mark;
-    { // '~=' ale_bitwise_or
+    { // '~=' bitwise_or
         if (p->error_indicator) {
             p->level--;
             return NULL;
         }
-        D(fprintf(stderr, "%*c> ale_bitwise_or[%d-%d]: %s\n", p->level, ' ', _mark, p->mark, "'~=' ale_bitwise_or"));
+        D(fprintf(stderr, "%*c> ale_bitwise_or[%d-%d]: %s\n", p->level, ' ', _mark, p->mark, "'~=' bitwise_or"));
         Token * _literal;
-        CmpopExprPair* a;
+        expr_ty a;
         if (
             (_literal = _PyPegen_expect_token(p, 54))  // token='~='
             &&
-            (a = ale_bitwise_or_rule(p))  // ale_bitwise_or
+            (a = bitwise_or_rule(p))  // bitwise_or
         )
         {
-            D(fprintf(stderr, "%*c+ ale_bitwise_or[%d-%d]: %s succeeded!\n", p->level, ' ', _mark, p->mark, "'~=' ale_bitwise_or"));
+            D(fprintf(stderr, "%*c+ ale_bitwise_or[%d-%d]: %s succeeded!\n", p->level, ' ', _mark, p->mark, "'~=' bitwise_or"));
             _res = _PyPegen_cmpop_expr_pair ( p , AlE , a );
             if (_res == NULL && PyErr_Occurred()) {
                 p->error_indicator = 1;
@@ -9323,7 +9323,7 @@ ale_bitwise_or_rule(Parser *p)
         }
         p->mark = _mark;
         D(fprintf(stderr, "%*c%s ale_bitwise_or[%d-%d]: %s failed!\n", p->level, ' ',
-                  p->error_indicator ? "ERROR!" : "-", _mark, p->mark, "'~=' ale_bitwise_or"));
+                  p->error_indicator ? "ERROR!" : "-", _mark, p->mark, "'~=' bitwise_or"));
     }
     _res = NULL;
   done:

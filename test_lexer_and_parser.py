@@ -65,11 +65,3 @@ This cmd will show ast in web
 
 >>> instaviz.show(foo)
 """
-"""
-import ast
-m= ast.parse('1~=2')
-m.body[0].value.ops[0]
-
->>>
-"""
-
